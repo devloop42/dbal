@@ -397,7 +397,7 @@ BEGIN
       WHILE (last_InsertID > last_Sequence) LOOP
          SELECT ' . $sequenceName . '.NEXTVAL INTO last_Sequence FROM DUAL;
       END LOOP;
-      SELECT ' . $sequenceName . '.NEXTVAL INTO last_Sequence FROM DUAL;
+      SELECT ' . $sequenceName . '.NEXTVAL INTO :NEW.' . $quotedName . ' FROM DUAL;
    END IF;
 END;';
 
